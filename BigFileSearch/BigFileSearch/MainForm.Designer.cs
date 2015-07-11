@@ -36,11 +36,10 @@
             this.searchTextBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.progressTimer = new System.Windows.Forms.Timer(this.components);
-            this.searchResultListView = new System.Windows.Forms.ListView();
             this.timeLabel = new System.Windows.Forms.Label();
             this.stopSearchButton = new System.Windows.Forms.Button();
-            this.文件名 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.大小 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.searchListView = new System.Windows.Forms.ListView();
+            this.returnButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // searchButton
@@ -96,17 +95,6 @@
             // 
             this.progressTimer.Tick += new System.EventHandler(this.progressTimer_Tick);
             // 
-            // searchResultListView
-            // 
-            this.searchResultListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.文件名,
-            this.大小});
-            this.searchResultListView.Location = new System.Drawing.Point(26, 141);
-            this.searchResultListView.Name = "searchResultListView";
-            this.searchResultListView.Size = new System.Drawing.Size(889, 293);
-            this.searchResultListView.TabIndex = 6;
-            this.searchResultListView.UseCompatibleStateImageBehavior = false;
-            // 
             // timeLabel
             // 
             this.timeLabel.AutoSize = true;
@@ -127,18 +115,34 @@
             this.stopSearchButton.UseVisualStyleBackColor = true;
             this.stopSearchButton.Click += new System.EventHandler(this.stopSearchButton_Click_1);
             // 
-            // 大小
+            // searchListView
             // 
-            this.大小.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.searchListView.Location = new System.Drawing.Point(26, 141);
+            this.searchListView.Name = "searchListView";
+            this.searchListView.Size = new System.Drawing.Size(889, 293);
+            this.searchListView.TabIndex = 9;
+            this.searchListView.UseCompatibleStateImageBehavior = false;
+            this.searchListView.View = System.Windows.Forms.View.Details;
+            this.searchListView.SelectedIndexChanged += new System.EventHandler(this.searchListView_SelectedIndexChanged);
+            // 
+            // returnButton
+            // 
+            this.returnButton.Location = new System.Drawing.Point(728, 69);
+            this.returnButton.Name = "returnButton";
+            this.returnButton.Size = new System.Drawing.Size(85, 23);
+            this.returnButton.TabIndex = 10;
+            this.returnButton.Text = "返回上级菜单";
+            this.returnButton.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(927, 446);
+            this.Controls.Add(this.returnButton);
+            this.Controls.Add(this.searchListView);
             this.Controls.Add(this.stopSearchButton);
             this.Controls.Add(this.timeLabel);
-            this.Controls.Add(this.searchResultListView);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.searchTextBox);
             this.Controls.Add(this.label1);
@@ -160,11 +164,10 @@
         private System.Windows.Forms.TextBox searchTextBox;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Timer progressTimer;
-        private System.Windows.Forms.ListView searchResultListView;
         private System.Windows.Forms.Label timeLabel;
         private System.Windows.Forms.Button stopSearchButton;
-        private System.Windows.Forms.ColumnHeader 文件名;
-        private System.Windows.Forms.ColumnHeader 大小;
+        private System.Windows.Forms.ListView searchListView;
+        private System.Windows.Forms.Button returnButton;
 
     }
 }
